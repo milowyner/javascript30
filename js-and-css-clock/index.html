@@ -71,7 +71,26 @@
   </style>
 
 <script>
+function setTime() {
+  const date = new Date();
+  const degrees = {
+    seconds: (date.getSeconds() / 60) * 360 + 90,
+    minutes: (date.getMinutes() / 60) * 360 + 90,
+    hours: (date.getHours() / 60) * 360 + 90
+  }
+  updateHands(degrees);
+}
+function updateHands(degrees) {
+  const secondHand = document.querySelector(".second-hand");
+  const minuteHand = document.querySelector(".min-hand");
+  const hourHand = document.querySelector(".hour-hand");
 
+  secondHand.style.transform = `rotate(${degrees.seconds}deg)`;
+  minuteHand.style.transform = `rotate(${degrees.minutes}deg)`;
+  hourHand.style.transform = `rotate(${degrees.hours}deg)`;
+}
+setTime();
+setInterval(setTime, 1000);
 </script>
 </body>
 </html>
