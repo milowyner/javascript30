@@ -7,13 +7,13 @@
 <body>
 
 
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
     </div>
+  </div>
 
 
   <style>
@@ -62,13 +62,16 @@
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.2s;
+      transition-timing-function: cubic-bezier(.4,2.08,.55,.44);
     }
 
   </style>
 
-  <script>
+<script>
 
-
-  </script>
+</script>
 </body>
 </html>
